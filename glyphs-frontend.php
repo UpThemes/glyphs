@@ -46,11 +46,11 @@ add_action( 'wp_head', 'glyphs_font_setup', 2 );
  */
 function glyphs_dequeue_fonts(){
 	if ( glyphs_typekit_is_valid() ){
-		wp_dequeue_style( 'creative-default-fonts' );
+		wp_dequeue_style( 'upthemes-default-fonts' );
 	}
 }
 
-add_action( 'wo_enqueue_scripts', 'creative_dequeue_fonts', 120 );
+add_action( 'wo_enqueue_scripts', 'glyphs_dequeue_fonts', 120 );
 
 if ( ! function_exists( 'glyphs_typekit_is_valid' ) ) :
 /**
