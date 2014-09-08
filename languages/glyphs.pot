@@ -1,0 +1,88 @@
+# Copyright (C) 2014 
+# This file is distributed under the same license as the  package.
+msgid ""
+msgstr ""
+"Project-Id-Version:  \n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/glyphs\n"
+"POT-Creation-Date: 2014-02-21 18:06:12+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2014-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+
+#: glyphs.php:88 glyphs.php:89 glyphs.php:114
+msgid "Font Authorization"
+msgstr ""
+
+#: glyphs.php:140
+msgid "Authorize Site"
+msgstr ""
+
+#: glyphs.php:207
+msgid "E-mail Address"
+msgstr ""
+
+#: glyphs.php:216
+msgid "Password"
+msgstr ""
+
+#: glyphs.php:225
+msgid "Typekit Kit ID"
+msgstr ""
+
+#: glyphs.php:243
+msgid ""
+"<h3 class=\"title glyphs-authed\">You are currently using Typekit Kit ID, "
+"<strong>%1$s</strong>.</h3>\n"
+"\t\t\t\t\t<p>Problems? <a href=\"#\" class=\"glyphs-re-auth\">Try "
+"authorizing again</a>.</p>"
+msgstr ""
+
+#: glyphs.php:251
+msgid ""
+"<p>Please authorize your theme to display Typekit fonts with your Theme "
+"Foundry sign in credentials. If you have trouble logging in, please <a href="
+"\"https://thethemefoundry.com/support/\">contact us in the Help Center</a>. "
+"The authorization process will send your current domain to Typekit to "
+"whitelist this site.</p>"
+msgstr ""
+
+#: glyphs.php:260
+msgid "Authorize"
+msgstr ""
+
+#: glyphs.php:265
+msgid "Use Typekit Kit ID (advanced)"
+msgstr ""
+
+#: glyphs.php:322
+msgid ""
+"Your theme is updated to use your custom Typekit Kit ID to display fonts."
+msgstr ""
+
+#: glyphs.php:330
+msgid "The Typekit ID entered is not valid"
+msgstr ""
+
+#: glyphs.php:335
+msgid "There was an error adding your Typekit ID."
+msgstr ""
+
+#: glyphs.php:381
+msgid ""
+"Your theme is authorized to display Typekit fonts! It may take up to 5 "
+"minutes for the updated fonts to appear."
+msgstr ""
+
+#: glyphs.php:407
+msgid "There was an error authorizing your theme to display Typekit fonts."
+msgstr ""
+
+#: glyphs.php:455
+msgid ""
+"Please <a href=\"%1$s\" title=\"Typekit Authentication\">authenticate your "
+"theme</a> to display Typekit premium fonts. <a href=\"#\" data-nonce=\"%2$s"
+"\" class=\"%3$s\">hide</a>"
+msgstr ""
