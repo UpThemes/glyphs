@@ -50,7 +50,7 @@ function glyphs_dequeue_fonts(){
 	}
 }
 
-add_action( 'wo_enqueue_scripts', 'glyphs_dequeue_fonts', 120 );
+add_action( 'wp_enqueue_scripts', 'glyphs_dequeue_fonts', 120 );
 
 if ( ! function_exists( 'glyphs_typekit_is_valid' ) ) :
 /**
