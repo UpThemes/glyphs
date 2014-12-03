@@ -16,14 +16,14 @@ function glyphs_font_setup() {
 		}
 		$path = trailingslashit( get_template_directory_uri() ) . ltrim( preg_replace( '#' . $path . '#', '', dirname( __FILE__ ) ), '/' );
 
-		if( function_exists( 'glyphs_typekit_is_valid' ) && 'valid' === glyphs_typekit_is_valid() ){
+		if( function_exists( 'glyphs_typekit_is_valid' ) && 'invalid' !== glyphs_typekit_is_valid() ){
 			// Loader
 			wp_register_script(
 				'glyphs-font-loader',
 				$path . '/js/glyphs-font-loader.js'
 			);
 
-			$typekit_id = false : get_option( 'typekit_id_custom' ) ? get_theme_mod( 'typekit-id' );
+			$typekit_id = get_option( 'typekit_id_custom' ) ? get_option( 'typekit_id_custom' ) : get_theme_mod( 'typekit-id' );
 
 			// Add kit ID
 			$kit_id = apply_filters( 'glyphs_typekit_kit_id', $typekit_id );
@@ -42,17 +42,6 @@ function glyphs_font_setup() {
 endif;
 
 add_action( 'wp_head', 'glyphs_font_setup', 2 );
-
-/**
- * Dequeues the default fonts so we can override with Typekit fonts.
- */
-function glyphs_dequeue_fonts(){
-	if ( glyphs_typekit_is_valid() ){
-		wp_dequeue_style( 'upthemes-default-fonts' );
-	}
-}
-
-add_action( 'wp_enqueue_scripts', 'glyphs_dequeue_fonts', 120 );
 
 if ( ! function_exists( 'glyphs_typekit_is_valid' ) ) :
 /**
