@@ -16,14 +16,15 @@ function glyphs_font_setup() {
 		}
 		$path = trailingslashit( get_template_directory_uri() ) . ltrim( preg_replace( '#' . $path . '#', '', dirname( __FILE__ ) ), '/' );
 
-		if( function_exists( 'glyphs_typekit_is_valid' ) && 'invalid' !== glyphs_typekit_is_valid() ){
+		$typekit_id = get_option( 'typekit_id_custom' ) ? get_option( 'typekit_id_custom' ) : get_theme_mod( 'typekit-id' );
+
+		if( $typekit_id ){
 			// Loader
 			wp_register_script(
 				'glyphs-font-loader',
 				$path . '/js/glyphs-font-loader.js'
 			);
 
-			$typekit_id = get_option( 'typekit_id_custom' ) ? get_option( 'typekit_id_custom' ) : get_theme_mod( 'typekit-id' );
 
 			// Add kit ID
 			$kit_id = apply_filters( 'glyphs_typekit_kit_id', $typekit_id );
@@ -42,21 +43,3 @@ function glyphs_font_setup() {
 endif;
 
 add_action( 'wp_head', 'glyphs_font_setup', 2 );
-
-if ( ! function_exists( 'glyphs_typekit_is_valid' ) ) :
-/**
- * Checks validity of typekit ID.
- */
-function glyphs_typekit_is_valid(){
-
-	if( defined( 'UPTHEMES_LICENSE_KEY' ) && get_option( UPTHEMES_LICENSE_KEY . '_status' ) ){
-		$license_status = glyphs_check_license();
-
-		if( $license_status !== 'valid' ){
-			delete_option( UPTHEMES_LICENSE_KEY . '_status' );
-		}
-
-		return $license_status;
-	}
-}
-endif;
