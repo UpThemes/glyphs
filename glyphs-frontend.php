@@ -10,11 +10,14 @@ if ( ! function_exists( 'glyphs_font_setup' ) ) :
 function glyphs_font_setup() {
 	if ( ! wp_script_is( 'glyphs-font-loader', 'registered' ) ) {
 		// Determine the path of the font directory relative to the theme directory
+		$dir_path   = str_replace( "\\", '/', get_template_directory() );
+		$theme_name = substr($dir_path, strrpos($dir_path, "/") + 1);
 		$local_path = str_replace( "\\", '/', dirname( __FILE__ ) );
-		$local_path = str_replace( str_replace( "\\", '/', get_template_directory() ), "", $local_path );
-		$path = get_template_directory_uri().$local_path;
+		$local_path = substr($local_path, strrpos($local_path, $theme_name) + strlen($theme_name));
+		$path       = get_template_directory_uri().$local_path;
 
 		$typekit_id = get_option( 'typekit_id_custom' ) ? get_option( 'typekit_id_custom' ) : get_theme_mod( 'typekit-id' );
+		$typekit_id = apply_filters( 'glyphs_typekit_id', $typekit_id );
 
 		if( $typekit_id ){
 			// Loader
